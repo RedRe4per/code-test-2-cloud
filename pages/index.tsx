@@ -59,7 +59,7 @@ export default function Home() {
             <Button color="primary" size="normal">
               Clear Filter
             </Button>
-            <Button color="primary" size="normal">
+            <Button color="secondary" size="normal">
               Subscribe to Generate Summary Report
             </Button>
           </section>

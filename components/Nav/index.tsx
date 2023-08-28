@@ -17,7 +17,7 @@ export default function Nav() {
         <li className="nav-title">contact us</li>
       </ul>
       <div className="ml-4">
-        <Button color="secondary" size="signIn">
+        <Button color="signIn" size="signIn">
           Sign in
         </Button>
       </div>

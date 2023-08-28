@@ -1,8 +1,8 @@
-export type ButtonColor = "primary" | "secondary" | "info";
+export type ButtonColor = "primary" | "secondary" | "signIn" | "info";
 
 type ButtonProps = {
   outline?: boolean;
-  color?: "primary" | "secondary" | "info";
+  color?: ButtonColor;
   size?: "normal" | "large" | "small" | "signIn";
   onClick?: () => void;
 } & React.ComponentProps<"button">;
@@ -12,13 +12,11 @@ const btn = "rounded-custom text-white justify-center items-center";
 const getButtonClass = (color: ButtonColor, outline: boolean) => {
   switch (color) {
     case "primary":
-      return outline
-        ? "border border-primary hover:bg-primary text-text-3-standard transition duration-200"
-        : "bg-primary hover:bg-primary-300 text-text-3-standard transition duration-200";
+      return "bg-primary hover:bg-primary-300 text-text-3-standard transition duration-200";
     case "secondary":
-      return outline
-        ? "border border-secondary hover:bg-secondary text-text-button"
-        : "bg-secondary hover:bg-secondary-400 text-text-button";
+      return "bg-secondary text-text-3-standard transition duration-200";
+    case "signIn":
+      return "bg-secondary hover:bg-secondary-400 text-text-button";
     case "info":
       return outline
         ? "border border-info hover:bg-info"
