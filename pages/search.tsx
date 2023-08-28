@@ -1,22 +1,32 @@
 import MyListbox from "@/components/Listbox";
 import Button from "@/components/Buttons";
+import CarInfo from "@/components/CarInfo";
 
-type Car = {
+export interface ICar {
   id: number;
   name: string;
-};
-
-interface Props {
-  data: Car[];
 }
 
-export default function Search({ data }: Props) {
-  const carList = data;
+export interface ICarInfo {
+  carName: string;
+  detail: string;
+  sell: string;
+  mil: number;
+  state: string;
+  condition: string;
+  soldDate: string;
+}
 
+interface Props {
+  carList: ICar[];
+  carInfoList: ICarInfo[];
+}
+
+export default function Search({ carList, carInfoList }: Props) {
   return (
     <>
-      <main className="bg-[#f6f4f4] text-[#212529] shadow-inset-top">
-        <section className="max-w-[1180px] mx-auto pt-4">
+      <main className="bg-[#f6f4f4] text-[#212529] shadow-inset-top  border-b-[1px] border-customGray">
+        <section className="max-w-[1180px] mx-auto pt-4 pb-8">
           <h1 className="text-heading-1">Search Used Car Prices</h1>
           <section className="grid grid-cols-7 gap-x-0 gap-y-[10px] mt-4">
             <MyListbox optionList={carList} />
@@ -46,13 +56,13 @@ export default function Search({ data }: Props) {
               className="rounded border border-customGray bg-white h-[36px] min-w-[436px] w-[45%] px-3 text-text-list-box focus:border-customGray focus:outline-none"
               placeholder="e.g. Metallic Paint,Power front seats,Power Sunroof, ..."
             ></input>
-            <Button color="primary" size="normal">
+            <Button category="primary" size="normal">
               Apply Filter
             </Button>
-            <Button color="primary" size="normal">
+            <Button category="primary" size="normal">
               Clear Filter
             </Button>
-            <Button color="secondary" size="normal">
+            <Button category="secondary" size="normal">
               Subscribe to Generate Summary Report
             </Button>
           </section>
@@ -91,6 +101,16 @@ export default function Search({ data }: Props) {
               </button>
             </div>
           </section>
+          <section className="mt-4">
+            {carInfoList.map((carInfo: ICarInfo, index: number) => {
+              return <CarInfo key={index} carInfo={carInfo} />;
+            })}
+          </section>
+          <div className="flex w-full items-center justify-center mt-10 mb-24">
+            <Button category="primary" size="large">
+              Load More
+            </Button>
+          </div>
         </section>
       </main>
     </>
@@ -116,7 +136,58 @@ export async function getStaticProps() {
     { id: 15, name: "Audi3" },
   ];
 
+  const carInfoList = [
+    {
+      carName: "Volkswagen Caddy 2018",
+      detail: "2KN MY19 TSI220 Van Maxi 5dr DSG 7sp 840kg 1.4T",
+      sell: "Auction",
+      mil: 110795,
+      state: "Sold in Bibra Lake, Perth(WA)",
+      condition: "Average Condition",
+      soldDate: "Aug 2023",
+    },
+    {
+      carName: "Volkswagen Caddy 2018",
+      detail: "2KN MY19 TSI220 Van Maxi 5dr DSG 7sp 840kg 1.4T",
+      sell: "Auction",
+      mil: 90331,
+      state: "Sold in Bibra Lake, Perth(WA)",
+      condition: "Average Condition",
+      soldDate: "Aug 2023",
+    },
+    {
+      carName: "Volkswagen Caddy 2018",
+      detail: "2KN MY19 TSI220 Van Maxi 5dr DSG 7sp 840kg 1.4T",
+      sell: "Auction",
+      mil: 52117,
+      state: "Sold in Bibra Lake, Perth(WA)",
+      condition: "Above Average ,Above Average Condition",
+      soldDate: "Aug 2023",
+    },
+    {
+      carName: "Volkswagen Caddy 2018",
+      detail: "2KN MY19 TSI220 Van Maxi 5dr DSG 7sp 840kg 1.4T",
+      sell: "Auction",
+      mil: 28599,
+      state: "Sold in Bibra Lake, Perth(WA)",
+      condition: "Above Average Condition",
+      soldDate: "Aug 2023",
+    },
+    {
+      carName: "Volkswagen Caddy 2018",
+      detail: "2KN MY19 TSI220 Van Maxi 5dr DSG 7sp 840kg 1.4T",
+      sell: "Auction",
+      mil: 110795,
+      state: "Sold in Bibra Lake, Perth(WA)",
+      condition: "Average Condition",
+      soldDate: "Aug 2023",
+    },
+  ];
+
   return {
-    props: { data: carList },
+    props: {
+      carList,
+      carInfoList,
+    },
   };
 }

@@ -6,7 +6,7 @@ import Layout from "@/components/Layout";
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export default function App({ Component, pageProps }: AppProps) {

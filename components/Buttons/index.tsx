@@ -1,26 +1,31 @@
-export type ButtonColor = "primary" | "secondary" | "signIn" | "info";
+export type ButtonCategory =
+  | "primary"
+  | "secondary"
+  | "signIn"
+  | "info"
+  | "carInfo";
 
 type ButtonProps = {
   outline?: boolean;
-  color?: ButtonColor;
+  category?: ButtonCategory;
   size?: "normal" | "large" | "small" | "signIn";
   onClick?: () => void;
 } & React.ComponentProps<"button">;
 
-const btn = "rounded-custom text-white justify-center items-center";
+const btn = "rounded-custom justify-center items-center";
 
-const getButtonClass = (color: ButtonColor, outline: boolean) => {
-  switch (color) {
+const getButtonClass = (category: ButtonCategory, outline: boolean) => {
+  switch (category) {
     case "primary":
-      return "bg-primary hover:bg-primary-300 text-text-3-standard transition duration-200";
+      return "bg-primary text-white hover:bg-primary-300 text-text-3-standard transition duration-200";
     case "secondary":
-      return "bg-secondary text-text-3-standard transition duration-200";
+      return "bg-secondary text-white text-text-3-standard transition duration-200";
     case "signIn":
-      return "bg-secondary hover:bg-secondary-400 text-text-button";
+      return "bg-secondary text-white hover:bg-secondary-400 text-text-button";
+    case "carInfo":
+      return "bg-secondary text-white text-text-2-bolder border border-secondary";
     case "info":
-      return outline
-        ? "border border-info hover:bg-info"
-        : "bg-info hover:bg-info-400";
+      return "border text-primary text-text-2-bolder border-primary hover:bg-info";
   }
 };
 
@@ -32,7 +37,7 @@ const buttonSize = {
 };
 
 const Button = ({
-  color = "primary",
+  category = "primary",
   outline = false,
   size = "normal",
   onClick,
@@ -41,7 +46,9 @@ const Button = ({
 }: ButtonProps) => {
   return (
     <button
-      className={`${getButtonClass(color, outline)} ${buttonSize[size]} ${btn}`}
+      className={`${getButtonClass(category, outline)} ${
+        buttonSize[size]
+      } ${btn}`}
       {...otherProps}
       onClick={onClick}
     >

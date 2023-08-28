@@ -58,6 +58,13 @@ module.exports = {
             fontWeight: "400",
           },
         ],
+        "text-3-bold": [
+          "1rem",
+          {
+            lineHeight: "150%",
+            fontWeight: "500",
+          },
+        ],
         "text-2": [
           "0.875rem",
           {
@@ -72,11 +79,25 @@ module.exports = {
             fontWeight: "500",
           },
         ],
+        "text-2-boldest": [
+          "0.875rem",
+          {
+            lineHeight: "150%",
+            fontWeight: "600",
+          },
+        ],
         "text-1": [
           "0.75rem",
           {
             lineHeight: "150%",
             fontWeight: "400",
+          },
+        ],
+        "text-1-tag": [
+          "0.75rem",
+          {
+            lineHeight: "150%",
+            fontWeight: "500",
           },
         ],
         "text-list-box": [
