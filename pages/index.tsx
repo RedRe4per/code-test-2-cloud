@@ -63,6 +63,37 @@ export default function Home() {
               Subscribe to Generate Summary Report
             </Button>
           </section>
+          <section className="flex text-text-2-bolder h-10 items-center mt-4 bg-white">
+            <div className="text-white bg-primary h-full w-[208px] flex items-center justify-center">
+              <span>Volkswagen Caddy Stats:</span>
+            </div>
+            <section className="flex flex-grow h-full shadow-car-info">
+              <div className="flex-grow flex justify-center items-center">
+                <span>Records</span>
+              </div>
+              <div className="flex-grow flex justify-center items-center">
+                <span>Avg Price:&nbsp;</span>
+                <span className="text-primary">Subscribe to Reveal Price</span>
+              </div>
+              <div className="flex-grow flex justify-center items-center">
+                <span>Avg KM:&nbsp;</span>
+                <span>129,377 kms </span>
+              </div>
+              <div className="flex-grow flex justify-center items-center">
+                <span>Avg Age:&nbsp;</span>
+                <span>83 months </span>
+              </div>
+              <div className="flex-grow flex justify-center items-center">
+                123
+              </div>
+            </section>
+          </section>
+          <section className="text-text-2-bolder flex justify-center items-center h-10 bg-secondary mt-4 shadow-car-info">
+            <div>
+              <span className="text-white">Need a Prices People Pay Valuation Report?</span>
+              <button className="bg-white ml-2 px-6 py-1 rounded-2xl text-secondary">Get One Now</button>
+            </div>
+          </section>
         </section>
       </main>
     </>

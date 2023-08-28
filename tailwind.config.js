@@ -65,6 +65,13 @@ module.exports = {
             fontWeight: "400",
           },
         ],
+        "text-2-bolder": [
+          "0.875rem",
+          {
+            lineHeight: "150%",
+            fontWeight: "500",
+          },
+        ],
         "text-1": [
           "0.75rem",
           {
@@ -91,6 +98,7 @@ module.exports = {
         "inset-top": "inset 0 7.5px 15px -7.5px #6372824d",
         "list-box":
           "0 2px 4px -1px rgba(0, 0, 0, 0.012), 0 4px 5px 0 rgba(0, 0, 0, 0.144), 0 1px 10px 0 rgba(0, 0, 0, 0.121)",
+        "car-info": "0 0 5px #0000000d",
       },
       borderRadius: {
         custom: "0.25rem",
