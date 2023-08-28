@@ -28,7 +28,7 @@ export default function Search({ carList, carInfoList }: Props) {
       <main className="bg-[#f6f4f4] text-[#212529] shadow-inset-top  border-b-[1px] border-customGray">
         <section className="max-w-[1180px] mx-auto pt-4 pb-8">
           <h1 className="text-heading-1">Search Used Car Prices</h1>
-          <section className="grid grid-cols-7 gap-x-0 gap-y-[10px] mt-4">
+          <section className="customLg:grid grid-cols-7 gap-x-0 gap-y-[10px] mt-4 hidden">
             <MyListbox optionList={carList} />
             <MyListbox optionList={carList} />
             <MyListbox optionList={carList} />
@@ -50,7 +50,7 @@ export default function Search({ carList, carInfoList }: Props) {
             <MyListbox optionList={carList} />
             <MyListbox optionList={carList} />
           </section>
-          <section className="mt-[10px] pr-10 flex w-full justify-between">
+          <section className="mt-[10px] pr-10 customLg:flex w-full justify-between hidden">
             <input
               type="text"
               className="rounded border border-customGray bg-white h-[36px] min-w-[436px] w-[45%] px-3 text-text-list-box focus:border-customGray focus:outline-none"
@@ -66,27 +66,27 @@ export default function Search({ carList, carInfoList }: Props) {
               Subscribe to Generate Summary Report
             </Button>
           </section>
-          <section className="flex text-text-2-bolder h-10 items-center mt-4 bg-white">
-            <div className="text-white bg-primary h-full w-[208px] flex items-center justify-center">
+          <section className="flex flex-col customLg:flex-row text-text-2-bolder items-center mt-4 bg-white">
+            <div className="text-white bg-primary h-10 w-full customLg:w-[208px] flex items-center justify-center">
               <span>Volkswagen Caddy Stats:</span>
             </div>
-            <section className="flex flex-grow h-full shadow-car-info">
-              <div className="flex-grow flex justify-center items-center">
+            <section className="grid grid-cols-2 customLg:grid-cols-4 flex-grow shadow-car-info">
+              <div className="flex-grow flex h-10 justify-center items-center">
                 <span>Records</span>
               </div>
-              <div className="flex-grow flex justify-center items-center">
+              <div className="flex-grow flex h-10 justify-center items-center">
                 <span>Avg Price:&nbsp;</span>
                 <span className="text-primary">Subscribe to Reveal Price</span>
               </div>
-              <div className="flex-grow flex justify-center items-center">
+              <div className="flex-grow flex h-10 justify-center items-center">
                 <span>Avg KM:&nbsp;</span>
                 <span>129,377 kms </span>
               </div>
-              <div className="flex-grow flex justify-center items-center">
+              <div className="flex-grow flex h-10 justify-center items-center">
                 <span>Avg Age:&nbsp;</span>
                 <span>83 months </span>
               </div>
-              <div className="flex-grow flex justify-center items-center">
+              <div className="flex-grow hidden customLg:flex justify-center items-center">
                 123
               </div>
             </section>
@@ -101,7 +101,7 @@ export default function Search({ carList, carInfoList }: Props) {
               </button>
             </div>
           </section>
-          <section className="mt-4">
+          <section className="mt-4 grid grid-cols-1 sm:grid-cols-2 customSlg:grid-cols-3 customLg:grid-cols-1 gap-4">
             {carInfoList.map((carInfo: ICarInfo, index: number) => {
               return <CarInfo key={index} carInfo={carInfo} />;
             })}

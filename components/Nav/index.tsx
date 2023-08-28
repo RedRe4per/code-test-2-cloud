@@ -3,7 +3,7 @@ import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 export default function Nav() {
   return (
-    <section className="flex items-center">
+    <section className="customLg:flex items-center hidden">
       <ul className="capitalize flex text-heading-2">
         <li className="nav-title">about</li>
         <li className="nav-title">pricing</li>

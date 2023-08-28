@@ -124,6 +124,10 @@ module.exports = {
       borderRadius: {
         custom: "0.25rem",
       },
+      screens: {
+        customLg: "1068px",
+        customSlg: "992px",
+      },
     },
   },
   plugins: [],
